@@ -19,7 +19,7 @@ fontsize_tick = st.number_input('Font size for y-axis',value = 8)
 st.write('Font size for the y-axis, default 8', fontsize_tick)
 
 rows = st.number_input('Nunber of rows',value = 93)
-st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93'), rows)
+st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
 ## argument of size of the figure; You may have to troubleshoot the more proteins/rows you add
 save=st.download_button('PNG file name to save', data=png, file_name='heatmap.png')
 
