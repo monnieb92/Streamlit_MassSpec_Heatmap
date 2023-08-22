@@ -1,5 +1,6 @@
 #!/bin/python3
 
+pip install seaborn 
 
 import numpy as np
 import seaborn as sns
