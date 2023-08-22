@@ -1,9 +1,8 @@
 #!/bin/python3
-
-import subprocess 
-subprocess.call(['pip', 'install', 'seaborn'])
+# use subprocess if seaborn isn't installing via requirements.txt
+#import subprocess 
+#subprocess.call(['pip', 'install', 'seaborn'])
 import seaborn as sns
-
 import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
