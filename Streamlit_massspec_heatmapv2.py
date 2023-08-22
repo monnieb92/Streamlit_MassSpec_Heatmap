@@ -78,5 +78,5 @@ p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws=
 ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
 plt.savefig('heatmap.png')
-
+st.pyplot()
 save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
