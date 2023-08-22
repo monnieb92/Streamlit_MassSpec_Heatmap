@@ -1,5 +1,8 @@
 #!/bin/python3
 
+import subprocess 
+subprocess.call(['pip', 'install', 'seaborn'])
+
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
