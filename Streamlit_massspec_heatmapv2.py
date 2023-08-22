@@ -13,8 +13,8 @@ import matplotlib.colors as colors
 from matplotlib.colors import LogNorm
 
 
-uploaded_file = st.sidebar.file_uploader("Upload your input txt file", type=["txt"])
-st.write('This is the path to the txt file from DESEQ2', uploaded_file)
+uploaded_file = st.sidebar.file_uploader("Upload your input csv file", type=["csv"])
+st.write('This is the path to the csv file from Spectral Counts', uploaded_file)
 
 fontsize = st.number_input('Font size of spectral counts',value = 8)
 st.write('Font size for the annotations aka spectral counts, default 8', fontsize)
