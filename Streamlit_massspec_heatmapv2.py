@@ -1,6 +1,6 @@
 #!/bin/python3
 import subprocess
-subprocess.call(['pip3', 'install', 'seaborn'])
+subprocess.call(['pip', 'install', 'seaborn'])
 
 import numpy as np
 import seaborn as sns
