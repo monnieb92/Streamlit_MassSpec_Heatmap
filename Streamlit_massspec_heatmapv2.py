@@ -2,9 +2,9 @@
 # use subprocess if seaborn isn't installing via requirements.txt
 #import subprocess 
 #subprocess.call(['pip', 'install', 'seaborn'])
+
 import streamlit as st
 import numpy as np
-import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib.colors as colors
@@ -71,4 +71,4 @@ ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## v
 ## Saving the final heatmap 
 plt.savefig(save)
 
-plt.show()
+st.pyplot()
