@@ -24,7 +24,7 @@ st.write('Font size for the y-axis, default 8', fontsize_tick)
 rows = st.number_input('Nunber of rows',value = 93)
 st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
 ## argument of size of the figure; You may have to troubleshoot the more proteins/rows you add
-save=st.download_button('PNG file name to save', data=png, file_name='heatmap.png')
+
 
 color = st.color_picker('Pick A Color', '#vlag')
 st.write('Color map, default is vlag', color)
@@ -70,6 +70,8 @@ p1 = plt.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws=
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
 ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
-plt.savefig(save)
+plt.savefig('heatmap.png')
 
 st.pyplot()
+
+save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
