@@ -14,9 +14,9 @@ from matplotlib.colors import LogNorm
 
 
 uploaded_file = st.sidebar.file_uploader("Upload your input csv file", type=["csv"])
-st.write('This is the path to the csv file from Spectral Counts
-Example of Header:',uploaded_file)
-st.image('HeaderExample.png')
+st.write('This is the path to the csv file from Spectral Counts',uploaded_file)
+image = Image.open('HeaderExample.png')
+st.image(image, caption="Example of the Header:")
  
 fontsize = st.number_input('Font size of spectral counts',value = 8)
 st.write('Font size for the annotations aka spectral counts, default 8', fontsize)
