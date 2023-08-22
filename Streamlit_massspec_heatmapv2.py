@@ -5,8 +5,8 @@
 
 import streamlit as st
 import numpy as np
-import pyplot as plt
 import pandas as pd
+import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 from matplotlib.colors import LogNorm
 from PIL import Image
