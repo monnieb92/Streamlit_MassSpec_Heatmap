@@ -1,6 +1,6 @@
 #!/bin/python3
 
-import streamlit as st
+
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -8,6 +8,7 @@ import pandas as pd
 import matplotlib.colors as colors
 from matplotlib.colors import LogNorm
 from PIL import Image
+import streamlit as st
 
 uploaded_file = st.sidebar.file_uploader("Upload your input txt file", type=["txt"])
 st.write('This is the path to the txt file from DESEQ2', uploaded_file)
