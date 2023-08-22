@@ -4,6 +4,7 @@
 #subprocess.call(['pip', 'install', 'seaborn'])
 import streamlit as st
 import numpy as np
+import matplotlib
 import matplotlib.pyplot as plt
 import pandas as pd
 import matplotlib.colors as colors
