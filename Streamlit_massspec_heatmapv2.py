@@ -30,7 +30,7 @@ st.write('Number of rows aka proteins to include minus 1 (python index starts at
 color = st.text_input('Pick A ColorMap: https://seaborn.pydata.org/tutorial/color_palettes.html', 'vlag')
 st.write('Color map, default is vlag', color)
 
-pltsize= number_input('Plot size, default is 6 16 (should be entered as two integers with a space between them)',value=[6, 16])
+pltsize= st.number_input('Plot size, default is 6 16 (should be entered as two integers with a space between them)',value=[6, 16])
 st.write(pltsize)
 
 location=st.number.input('Location of spectral count columns for the heatmap, default 9:15 (This assumes ParentalA, ParentalB, ParentalC, SampleA, SampleB, SampleC)',value='9:15')
