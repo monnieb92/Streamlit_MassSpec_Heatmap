@@ -30,9 +30,13 @@ st.write('Number of rows aka proteins to include minus 1 (python index starts at
 color = st.text_input('Pick A ColorMap: https://seaborn.pydata.org/tutorial/color_palettes.html', 'vlag')
 st.write('Color map, default is vlag', color)
 
-pltsize= st.number_input('Plot size, default is 6 16 (should be entered as two integers with a space between them)',value=[6, 16])
-st.write(pltsize)
-
+default_width = 6
+default_height = 16
+width= st.number_input('Plot size width, default is 6 ',value=default_width)
+st.write(width)
+height= st.number_input('Plot size height, default 16 ,value=default_height)
+st.write(height)
+                        
 location=st.number.input('Location of spectral count columns for the heatmap, default 9:15 (This assumes ParentalA, ParentalB, ParentalC, SampleA, SampleB, SampleC)',value='9:15')
 st.write(location)
 
@@ -65,7 +69,7 @@ offset = 1e-1
 ## Offsetting the heatmap by 0.01 to help adjust the coloring in the heatmap because the logNorm of 0 is -inf
 dfheatmap_offset = dfheatmap_filled + offset
 ## figure heatmap size 
-fig, ax = plt.subplots(figsize=pltsize)
+fig, ax = plt.subplots(figsize=[width,height])
 ## plotting heatmap with the offset df as the coloring because the logNorm of 0 is -inf, the annotated spectral counts as dfheatmap_filled (the actual # of spectral counts) and no decimal point fmt='.0f'; cmap is the coloring map/palette you chose or the default; linecolor is always white with a width of 0.5 between each heatmap square; performing the log normalization of the spectral counts for proper coloring  
 p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize, "weight": "bold"}, cmap=color, linecolor='white', linewidth='0.5', norm=LogNorm())
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
