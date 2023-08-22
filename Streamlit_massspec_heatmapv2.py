@@ -27,7 +27,7 @@ st.write('Number of rows aka proteins to include minus 1 (python index starts at
 ## argument of size of the figure; You may have to troubleshoot the more proteins/rows you add
 
 
-color = st.color_picker('Pick A Color', '#vlag')
+color = st.text_input('Pick A ColorMap: https://seaborn.pydata.org/tutorial/color_palettes.html', 'vlag')
 st.write('Color map, default is vlag', color)
 
 pltsize= number_input('Plot size, default is 6 16 (should be entered as two integers with a space between them)',value=[6, 16])
