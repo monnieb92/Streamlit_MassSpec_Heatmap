@@ -37,7 +37,7 @@ st.write(width)
 height= st.number_input('Plot size height, default 16' ,value=default_height)
 st.write(height)
                         
-location=st.number.input('Location of spectral count columns for the heatmap, default 9:15 (This assumes ParentalA, ParentalB, ParentalC, SampleA, SampleB, SampleC)',value='9:15')
+location=st.text_input('Location of spectral count columns for the heatmap, default 9:15 (This assumes ParentalA, ParentalB, ParentalC, SampleA, SampleB, SampleC)',value='9:15')
 st.write(location)
 
 
