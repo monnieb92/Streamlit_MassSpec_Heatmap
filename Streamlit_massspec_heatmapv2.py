@@ -82,7 +82,7 @@ ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## v
 plt.savefig('heatmap.png')
 
 if uploaded_file is not None:
-   st.pyplot(fig)
+   st.pyplot()
 else:
    st.stop()
  
