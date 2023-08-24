@@ -16,7 +16,7 @@ from matplotlib.colors import LogNorm
 uploaded_file = st.sidebar.file_uploader("Upload your input csv file", type=["csv"])
 st.write('This is the path to the csv file from Spectral Counts',uploaded_file)
 image = Image.open('HeaderExample.png')
-st.image(image, caption="Example of the Header:")
+st.image(caption="Example of the Header:",image)
  
 fontsize = st.number_input('Font size of spectral counts',value = 8)
 st.write('Font size for the annotations aka spectral counts, default 8', fontsize)
@@ -44,7 +44,7 @@ st.write(location)
 
 annotation_txt_color=st.color_picker('Color of the spectral counts', value="#fdfdfd")
 st.write('The current color for the spectral counts is', annotation_txt_color)
-
+if st.button('Make Heatmap'):
 # Read CSV file
 df = pd.read_csv(uploaded_file)
 print("Top 10 rows of the csv file")
@@ -81,5 +81,6 @@ ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## v
 ## Saving the final heatmap 
 plt.savefig('heatmap.png')
 st.pyplot()
- 
+else
+st.write("No .csv uploaded")
 save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
