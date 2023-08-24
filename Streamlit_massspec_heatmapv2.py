@@ -19,7 +19,7 @@ image = Image.open('HeaderExample.png')
 st.write("Example of Header for .csv")
 st.image(image)
  
-fontsize_anno = st.number_input('Font size of spectral counts',value = 8)
+fontsize_anno = st.number_input('Font size of spectral counts',min_value= 3,value = 8, max_value=12)
 st.write('Font size for the annotations aka spectral counts, default 8', fontsize_anno)
 
 font_weight = st.text_input('bold of normal', 'normal')
@@ -90,7 +90,7 @@ if st.session_state.clicked:
 ## figure heatmap size 
  fig, ax = plt.subplots(figsize=[width,height])
 ## plotting heatmap with the offset df as the coloring because the logNorm of 0 is -inf, the annotated spectral counts as dfheatmap_filled (the actual # of spectral counts) and no decimal point fmt='.0f'; cmap is the coloring map/palette you chose or the default; linecolor is always white with a width of 0.5 between each heatmap square; performing the log normalization of the spectral counts for proper coloring  
- heatmap_plt = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": font_weight,"color":annotation_txt_color},cmap=color,linecolor='white', linewidth='0.5', norm=LogNorm(), cbar_kws={"shrink": 0.5, "weight"=font_weight})
+ heatmap_plt = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": font_weight,"color":annotation_txt_color},cmap=color,linecolor='white', linewidth='0.5', norm=LogNorm(), cbar_kws={"shrink": 0.5})
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
  cbar = heatmap_plt.collections[0].colorbar
  cbar.set_ticks([0.02 ,1, 10,100])
