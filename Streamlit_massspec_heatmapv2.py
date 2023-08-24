@@ -19,11 +19,14 @@ image = Image.open('HeaderExample.png')
 st.write("Example of Header for .csv")
 st.image(image)
  
-fontsize = st.number_input('Font size of spectral counts',value = 8)
+fontsize_anno = st.number_input('Font size of spectral counts',value = 8)
 st.write('Font size for the annotations aka spectral counts, default 8', fontsize)
 
 fontsize_tick = st.number_input('Font size for y-axis',value = 8)
 st.write('Font size for the y-axis, default 8', fontsize_tick)
+
+fontsize_legend = st.number_input('Font size for Legend',value = 8)
+st.write('Font size for the Legend, default 8', fontsize_tick)
 
 rows = st.number_input('Nunber of rows',value = 93)
 st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
@@ -84,8 +87,10 @@ if st.session_state.clicked:
 ## figure heatmap size 
  fig, ax = plt.subplots(figsize=[width,height])
 ## plotting heatmap with the offset df as the coloring because the logNorm of 0 is -inf, the annotated spectral counts as dfheatmap_filled (the actual # of spectral counts) and no decimal point fmt='.0f'; cmap is the coloring map/palette you chose or the default; linecolor is always white with a width of 0.5 between each heatmap square; performing the log normalization of the spectral counts for proper coloring  
- p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize, "weight": "bold","color":annotation_txt_color}, cmap=color, linecolor='white', linewidth='0.5', norm=LogNorm())
+ p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": "bold","color":annotation_txt_color}, 
+                  cbar_kws={"fontsize":fontsize_legend},cmap=color, linecolor='white', linewidth='0.5', norm=LogNorm())
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
+ 
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
  plt.savefig('heatmap.png')
