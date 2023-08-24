@@ -20,13 +20,13 @@ st.write("Example of Header for .csv")
 st.image(image)
  
 fontsize_anno = st.number_input('Font size of spectral counts',value = 8)
-st.write('Font size for the annotations aka spectral counts, default 8', fontsize)
+st.write('Font size for the annotations aka spectral counts, default 8', fontsize_anno)
 
 fontsize_tick = st.number_input('Font size for y-axis',value = 8)
 st.write('Font size for the y-axis, default 8', fontsize_tick)
 
 fontsize_legend = st.number_input('Font size for Legend',value = 8)
-st.write('Font size for the Legend, default 8', fontsize_tick)
+st.write('Font size for the Legend, default 8', fontsize_legend)
 
 rows = st.number_input('Nunber of rows',value = 93)
 st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
