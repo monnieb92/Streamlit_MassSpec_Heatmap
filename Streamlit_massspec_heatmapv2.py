@@ -87,7 +87,7 @@ if st.session_state.clicked:
 ## figure heatmap size 
  fig, ax = plt.subplots(figsize=[width,height])
 ## plotting heatmap with the offset df as the coloring because the logNorm of 0 is -inf, the annotated spectral counts as dfheatmap_filled (the actual # of spectral counts) and no decimal point fmt='.0f'; cmap is the coloring map/palette you chose or the default; linecolor is always white with a width of 0.5 between each heatmap square; performing the log normalization of the spectral counts for proper coloring  
- p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": "bold","color":annotation_txt_color},cmap=color, cbar_kws={"fontsize" : fontsize_legend},linecolor='white', linewidth='0.5', norm=LogNorm())
+ p1 = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": "bold","color":annotation_txt_color},cmap=color,linecolor='white', linewidth='0.5', norm=LogNorm())
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
