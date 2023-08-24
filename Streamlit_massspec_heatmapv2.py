@@ -46,7 +46,15 @@ st.write(location)
 annotation_txt_color=st.color_picker('Color of the spectral counts', value="#fdfdfd")
 st.write('The current color for the spectral counts is', annotation_txt_color)
 
-if st.button('Make Heatmap'):
+if 'clicked' not in st.session_state:
+    st.session_state.clicked = False
+
+def click_button():
+    st.session_state.clicked = True
+
+st.button('Make Heatmap', on_click=click_button)
+
+if st.session_state.clicked:
  # Read CSV file
  df = pd.read_csv(uploaded_file)
  print("Top 10 rows of the csv file")
@@ -82,7 +90,7 @@ if st.button('Make Heatmap'):
 ## Saving the final heatmap 
  plt.savefig('heatmap.png')
  st.pyplot()
-else
- st.write("No .csv uploaded")
+
+
 
 save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
