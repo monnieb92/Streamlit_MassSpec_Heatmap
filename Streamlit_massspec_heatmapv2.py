@@ -93,7 +93,4 @@ if st.session_state.clicked:
 ## Saving the final heatmap 
  plt.savefig('heatmap.png')
  st.pyplot(fig)
-
-
-
-save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
+ save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
