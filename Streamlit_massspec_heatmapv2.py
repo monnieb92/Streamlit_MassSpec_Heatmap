@@ -90,7 +90,7 @@ if st.session_state.clicked:
  heatmap_plt = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": "bold","color":annotation_txt_color},cmap=color,linecolor='white', linewidth='0.5', norm=LogNorm())
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
  cbar = heatmap_plt.collections[0].colorbar
- cbar.set_ticks([0 ,1, 10,10<sub>2</sub>])
+ cbar.set_ticklabels([0 ,1, 10,100])
  cbar.ax.tick_params(labelsize=fontsize_legend)
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
