@@ -89,7 +89,7 @@ if st.session_state.clicked:
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
  plt.savefig('heatmap.png')
- st.pyplot(p1)
+ st.pyplot(fig)
 
 
 
