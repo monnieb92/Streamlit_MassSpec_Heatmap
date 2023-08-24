@@ -93,7 +93,7 @@ if st.session_state.clicked:
  cbar.set_ticks([0.02 ,1, 10,100])
  cbar.set_ticklabels(["0" ,"1", "10","100"])
  cbar.ax.tick_params(labelsize=fontsize_legend)
- cbar.ax.set_position(cbar.ax.get_position().shrink(0.5))
+ cbar.ax.set_position(cbar.ax.get_position().shrunk(0.5))
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
  plt.savefig('heatmap.png')
