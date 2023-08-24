@@ -91,7 +91,7 @@ if st.session_state.clicked:
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
  cbar = heatmap_plt.collections[0].colorbar
  cbar.set_ticks([0 ,1, 10,100])
- cbar.set_yticklabels(["0" ,"1", "10","100"])
+ cbar.set_ticklabels(["0" ,"1", "10","100"])
  cbar.ax.tick_params(labelsize=fontsize_legend)
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight='bold') ## version 2 addition 
 ## Saving the final heatmap 
