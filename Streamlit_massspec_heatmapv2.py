@@ -16,20 +16,20 @@ from matplotlib.colors import LogNorm
 uploaded_file = st.sidebar.file_uploader("Upload your input csv file", type=["csv"])
 st.write('This is the path to the csv file from Spectral Counts',uploaded_file)
 image = Image.open('HeaderExample.png')
-st.write("Example of Header for .csv")
+#st.write("Example of Header for .csv")
 st.image(image)
  
 fontsize_anno = st.number_input('Font size of spectral counts',min_value= 3,value = 8, max_value=12)
-st.write('Font size for the annotations aka spectral counts, default 8', fontsize_anno)
+#st.write('Font size for the annotations aka spectral counts, default 8', fontsize_anno)
 
 font_weight = st.text_input('bold of normal', 'normal')
-st.write('Font weight for the heatmap, default normal', font_weight)
+#st.write('Font weight for the heatmap, default normal', font_weight)
 
 fontsize_tick = st.number_input('Font size for y-axis',value = 8)
-st.write('Font size for the y-axis, default 8', fontsize_tick)
+#st.write('Font size for the y-axis, default 8', fontsize_tick)
 
 fontsize_legend = st.number_input('Font size for Legend',value = 8)
-st.write('Font size for the Legend, default 8', fontsize_legend)
+#st.write('Font size for the Legend, default 8', fontsize_legend)
 
 rows = st.number_input('Number of rows',value = 93)
 st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
@@ -50,7 +50,7 @@ location=st.text_input('Location of spectral count columns for the heatmap, defa
 st.write(location)
 
 annotation_txt_color=st.color_picker('Color of the spectral counts', value="#fdfdfd")
-st.write('The current color for the spectral counts is', annotation_txt_color)
+#st.write('The current color for the spectral counts is', annotation_txt_color)
 
 if 'clicked' not in st.session_state:
     st.session_state.clicked = False
