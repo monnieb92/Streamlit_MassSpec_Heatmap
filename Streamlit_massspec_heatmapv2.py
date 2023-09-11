@@ -45,7 +45,8 @@ width= st.number_input('Plot size width, default is 6 ',value=default_width)
 st.write(width)
 height= st.number_input('Plot size height, default 16' ,value=default_height)
 st.write(height)
-                        
+dpi_out = st.number_input('dpi for the heamtap, default 300' ,value=300)
+st.write(dpi_out)                        
 location=st.text_input('Location of spectral count columns for the heatmap, default 9:15 (This assumes ParentalA, ParentalB, ParentalC, SampleA, SampleB, SampleC)',value='9:15')
 st.write(location)
 
@@ -99,6 +100,6 @@ if st.session_state.clicked:
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight=font_weight)
  ax.set_xticklabels(ax.get_xticklabels(), size=fontsize_tick, weight=font_weight)## version 2 addition 
 ## Saving the final heatmap 
- plt.savefig('heatmap.png')
+ plt.savefig('heatmap.png', dpi =dpi_out, pad_inches=0.2)
  st.pyplot(fig)
  save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
