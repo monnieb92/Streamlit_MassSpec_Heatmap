@@ -45,7 +45,7 @@ st.write('Color map, default is vlag', color)
 
 default_width = 6
 default_height = 16
-width= st.number_input('Plot size width, default is 6 ',value=default_width, min=4)
+width= st.number_input('Plot size width, default is 6 ',value=default_width, min_value=4)
 st.write(width)
 height= st.number_input('Plot size height, default 16' ,value=default_height)
 st.write(height)
