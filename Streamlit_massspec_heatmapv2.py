@@ -104,6 +104,6 @@ if st.session_state.clicked:
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight=font_weight)
  ax.set_xticklabels(ax.get_xticklabels(), size=fontsize_tick, weight=font_weight)## version 2 addition 
 ## Saving the final heatmap 
- plt.savefig('heatmap.png', dpi =dpi_out, pad_inches=0.5)
+ plt.savefig('heatmap.png', dpi =dpi_out, pad_inches=1)
  st.pyplot(fig)
  save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
