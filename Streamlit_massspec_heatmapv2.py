@@ -15,8 +15,7 @@ import urllib.request
 
 uploaded_file = st.sidebar.file_uploader("Upload your input csv file", type=["csv"])
 st.write('This is the path to the csv file from Spectral Counts',uploaded_file)
-if uploaded_file is None:
-    # Use the default CSV file from GitHub
+if uploaded_file is None: #Use the default CSV file from GitHub
     default_csv_url = "https://raw.githubusercontent.com/monnieb92/Streamlit_MassSpec_Heatmap/main/5848-highRes_FLAGclone6_APEX2clone8.csv"
     st.info(f"No CSV file uploaded. Using the default CSV file from GitHub: {default_csv_url}")
     uploaded_file = urllib.request.urlopen(default_csv_url)
