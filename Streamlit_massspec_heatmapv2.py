@@ -18,7 +18,7 @@ st.write('This is the path to the csv file from Spectral Counts',uploaded_file)
 
 if uploaded_file is None:
     # Use the default CSV file from GitHub
-    default_csv_url = "https://github.com/monnieb92/Streamlit_MassSpec_Heatmap/raw/main/5848-highRes_FLAGclone6_APEX2clone8.csv"
+    default_csv_url = "https://github.com/monnieb92/Streamlit_MassSpec_Heatmap/blob/main/5848-highRes_FLAGclone6_APEX2clone8.csv"
     st.info(f"No CSV file uploaded. Using the default CSV file from GitHub: {default_csv_url}")
     uploaded_file = urllib.request.urlopen(default_csv_url)
 
