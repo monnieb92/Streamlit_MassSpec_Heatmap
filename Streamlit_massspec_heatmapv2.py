@@ -95,7 +95,7 @@ if st.session_state.clicked:
 ## figure heatmap size 
  fig, ax = plt.subplots(figsize=[width,height])
 ## plotting heatmap with the offset df as the coloring because the logNorm of 0 is -inf, the annotated spectral counts as dfheatmap_filled (the actual # of spectral counts) and no decimal point fmt='.0f'; cmap is the coloring map/palette you chose or the default; linecolor is always white with a width of 0.5 between each heatmap square; performing the log normalization of the spectral counts for proper coloring  
- heatmap_plt = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": font_weight,"color":annotation_txt_color},cmap=color,linecolor='white', linewidth='1', norm=LogNorm(), cbar_kws={"shrink": 0.7})
+ heatmap_plt = sns.heatmap(dfheatmap_offset, fmt='.0f', annot=dfheatmap_filled, annot_kws={"size": fontsize_anno, "weight": font_weight,"color":annotation_txt_color, "pad" : 0.5},cmap=color,linecolor='white', linewidth='1', norm=LogNorm(), cbar_kws={"shrink": 0.7})
 ## adjust the size and boldness of the y-axis labeling aka the protein/Gene names 
  cbar = heatmap_plt.collections[0].colorbar
  cbar.set_ticks([0.02 ,1, 10,100])
@@ -104,6 +104,6 @@ if st.session_state.clicked:
  ax.set_yticklabels(ax.get_yticklabels(), size=fontsize_tick, weight=font_weight)
  ax.set_xticklabels(ax.get_xticklabels(), size=fontsize_tick, weight=font_weight)## version 2 addition 
 ## Saving the final heatmap 
- plt.savefig('heatmap.png', dpi =dpi_out, pad_inches=0.5)
+ plt.savefig('heatmap.png', dpi =dpi_out, pad_inches=0.5, bbox_inches='tight')
  st.pyplot(fig)
  save=st.download_button('PNG file name to save', data=open('heatmap.png','rb').read(), file_name='heatmap.png')
