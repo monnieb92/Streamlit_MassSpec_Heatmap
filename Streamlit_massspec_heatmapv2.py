@@ -31,8 +31,8 @@ fontsize_tick = st.number_input('Font size for y-axis',value = 8)
 fontsize_legend = st.number_input('Font size for Legend',value = 8)
 #st.write('Font size for the Legend, default 8', fontsize_legend)
 
-rows = st.number_input('Number of rows',value = 93)
-st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 93)', rows)
+rows = st.number_input('Number of rows',value = 92)
+st.write('Number of rows aka proteins to include minus 1 (python index starts at 0 instead of 1), default 92)', rows)
 ## argument of size of the figure; You may have to troubleshoot the more proteins/rows you add
 
 
@@ -41,7 +41,7 @@ st.write('Color map, default is vlag', color)
 
 default_width = 6
 default_height = 16
-width= st.number_input('Plot size width, default is 6 ',value=default_width)
+width= st.number_input('Plot size width, default is 6 ',value=default_width, min=4)
 st.write(width)
 height= st.number_input('Plot size height, default 16' ,value=default_height)
 st.write(height)
